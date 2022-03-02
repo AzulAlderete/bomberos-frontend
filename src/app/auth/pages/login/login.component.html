@@ -1,0 +1,30 @@
+<section class="login">
+        <div class="login__form">
+            <div class="login__form-area">
+                <img src="assets/img/logo1.svg" alt="logo">
+                <h1>Rellena los campos para ingresar</h1>
+                <form class="form">
+                    <div class="form__group">
+                        <label for="usuario">Usuario</label>
+                        <input id="username" type="text" autocomplete="off" name="username" autofocus="true"
+                        [(ngModel)]="auth.username" placeholder="Ingrese su usuario" class="form__control">
+                    </div>
+                    <div class="form__group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" [(ngModel)]="auth.password" placeholder="Ingrese su password" class="form__control">
+                    </div>
+                    <div class="form__group mt-4">
+                        <button
+                        type="submit"
+                        (click)="login()"
+                        class="button button--dark button--block"
+                        >
+                            <i class="fas fa-sign-in-alt"></i>
+                            INGRESAR
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="login__bg"></div>
+    </section>

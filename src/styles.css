@@ -1,0 +1,284 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: none;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: .875rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #ECF5F6;
+    overflow-x: hidden;
+  }
+  
+  .login {
+    width: 100vw;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #ffffff;
+  }
+  
+  .login__form {
+    width: 100%;
+    padding: 2rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  
+  @media (min-width: 768px) {
+    .login__form {
+      width: 26.875rem;
+    }
+  }
+  
+  .login__form img {
+    width: 80%;
+    height: 20%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  
+  @media (min-width: 576px) {
+    .login__form img {
+      width: 50%;
+    }
+  }
+  
+  .login__form h1 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+  
+  .login__bg {
+    display: none;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    background: url("assets/img/bg.png") no-repeat center center/cover;
+  }
+  
+  @media (min-width: 768px) {
+    .login__bg {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+  }
+  
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .wrapper main {
+    position: absolute;
+    left: 15rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .wrapper main.full {
+    left: 0;
+  }
+  
+  .wrapper main.full .header {
+    width: 100vw;
+  }
+  
+  .wrapper main .header {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: calc(100vw - 15rem);
+    height: 3.75rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #ffffff;
+    padding: .8rem 1.25rem;
+    -webkit-box-shadow: 0 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper main .header__menu {
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+  }
+  
+  .wrapper main .header__profile {
+    margin-left: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .wrapper main .header__profile span {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0 .2rem;
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .wrapper main .header__profile span {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+  }
+  
+  .sidebar {
+    width: 15rem;
+    position: fixed;
+    top: 0;
+    left: -15rem;
+    background-color: #0c0c0e;
+    min-height: 100vh;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    padding: 1rem 1.25rem;
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+  
+  .sidebar h3 {
+    font-size: 1.125rem;
+    color: #C8C8C8;
+  }
+  
+  .sidebar__menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+  
+  .sidebar__menu-li {
+    padding: .2rem 0;
+  }
+  
+  .sidebar__menu-a {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+    color: #C0C0C0;
+    padding: 0.688rem 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+  }
+  
+  .sidebar__menu-a.active, .sidebar__menu-a:hover {
+    color: #ffffff;
+    padding: 0.688rem 1rem;
+    background-color: #242429;
+    border-radius: 0.25rem;
+  }
+  
+  .sidebar__submenu {
+    background-color: #242429;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    padding: 1rem 0;
+    display: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .sidebar__submenu.display {
+    display: block;
+  }
+  
+  .sidebar__submenu-li {
+    list-style-type: none;
+    padding: .4rem;
+  }
+  
+  .sidebar__submenu-a {
+    color: #C0C0C0;
+    text-decoration: none;
+  }
+  
+  .sidebar__submenu-a:hover {
+    color: #ffffff;
+  }
+  
+  .form__group {
+    margin-bottom: 1rem;
+  }
+  
+  .form__group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: block;
+  }
+  
+  .form__control {
+    width: 100%;
+    background-color: #F5F5F5;
+    border: 1px solid #B7B7B7;
+    border-radius: 0.25rem;
+    padding: .5rem 1rem;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  
+  .form__control:focus {
+    border: 1px solid #5316A0;
+  }
+  
+  .button {
+    background-color: transparent;
+    border: transparent;
+    color: transparent;
+    cursor: pointer;
+  }
+  
+  .button--block {
+    display: block;
+    width: 100%;
+  }
+  
+  .button--dark {
+    background-color: #0c0c0e;
+    border-radius: 0.25rem;
+    padding: .5rem 1rem;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.875rem;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  
+  .button--dark:hover {
+    background-color: #242429;
+  }
+  
