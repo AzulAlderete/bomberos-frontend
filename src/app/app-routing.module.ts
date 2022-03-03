@@ -36,6 +36,33 @@ const routes: Routes = [
     canLoad: [AuthGuard],
   },
   {
+    path: 'tipo-herramientas',
+    loadChildren: () =>
+      import('./tipo-herramientas/tipo-herramientas.module').then(
+        (m) => m.TipoHerramientasModule
+      ),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'herramientas',
+    loadChildren: () =>
+      import('./herramientas/herramientas.module').then(
+        (m) => m.HerramientasModule
+      ),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'bocas-de-agua',
+    loadChildren: () =>
+      import('./bocas-de-agua/bocas-de-agua.module').then(
+        (m) => m.BocasDeAguaModule
+      ),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
     path: '**',
     component: ErrorComponent,
   },

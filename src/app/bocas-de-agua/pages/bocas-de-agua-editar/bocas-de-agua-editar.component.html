@@ -1,0 +1,53 @@
+<div class="row m-3">
+    <h3>{{ title }}</h3>
+    <div class="card">
+        <div class="card-body">
+            <button class="btn btn-outline-dark btn-sm" (click)="regresar()" >
+                <i class="fas fa-arrow-left"></i>
+                Regresar al listado
+            </button>
+               <div *ngIf="!bocaDeAgua.hasOwnProperty('id'); else mostrarForm" >
+                <div class="d-flex justify-content-center h-50">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+                </div>
+            </div>
+            <ng-template #mostrarForm>
+                <form class="my-3 form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form__group">
+                                <label for="direccion">Direccion</label>
+                                <input type="text" autocomplete="off" name="direccion" [(ngModel)]="bocaDeAgua.direccion" required class="form__control" placeholder="Ingrese la direccion">
+                            </div>
+                            <div class="form__group">
+                                <label for="numero">Numero</label>
+                                <input type="number" name="numero" [(ngModel)]="bocaDeAgua.numero" required class="form__control" placeholder="Ingrese el numero">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form__group">
+                                <label for="latitud">Latitud</label>
+                                <input type="text" name="latitud" autocomplete="off" [(ngModel)]="bocaDeAgua.latitud" required class="form__control" placeholder="Ingrese la latitud">
+                            </div>
+                             <div class="form__group">
+                                <label for="longitud">Longtud</label>
+                                <input type="text"  name="longitud" autocomplete="off" [(ngModel)]="bocaDeAgua.longitud" required class="form__control" placeholder="Ingrese la longitud">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <button type="submit" (click)="editar()" class="btn btn-primary">
+                            <i class="fas fa-database"></i>
+                            Agregar
+                        </button>
+                    </div>
+                </form>
+            </ng-template>
+
+        </div>
+    </div>
+</div>
+
+
