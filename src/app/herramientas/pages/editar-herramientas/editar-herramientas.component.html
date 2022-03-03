@@ -1,0 +1,62 @@
+<div class="row m-3">
+    <h3>{{ title }}</h3>
+    <div class="card">
+        <div class="card-body">
+            <button class="btn btn-outline-dark btn-sm" (click)="regresar()" >
+                <i class="fas fa-arrow-left"></i>
+                Regresar al listado
+            </button>
+
+            <div *ngIf="!herramienta.hasOwnProperty('id'); else mostrarForm" >
+                <div class="d-flex justify-content-center h-50">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+                </div>
+            </div>
+
+            <ng-template #mostrarForm>
+
+                <form class="my-3 form" >
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form__group">
+                                <label for="codigo">Codigo</label>
+                                <input type="number" name="codigo" autocomplete="off" [(ngModel)]="herramienta.codigo" required class="form__control" placeholder="Ingrese el codigo">
+                            </div>
+                            <div class="form__group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre" autocomplete="off" [(ngModel)]="herramienta.nombre" required class="form__control" placeholder="Ingrese el nombre">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form__group">
+                                <label for="tipo_herramienta_id">Tipo de Herramienta</label>
+                                <select name="tipo_herramienta_id" [(ngModel)]="herramienta.tipo_herramienta_id" class="form__control">
+                                    <option value="">Seleccione el tipo</option>
+                                    <option *ngFor="let t of tipoHerramientas" [value]="t.id">{{ t.descripcion }}</option>
+                                </select>
+                            </div>
+                            <div class="form__group">
+                                <label for="estado">Estado</label>
+                                <select name="estado" [(ngModel)]="herramienta.estado" class="form__control">
+                                    <option value="Activo" selected >Activo</option>
+                                    <option value="Inactivo">Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <button type="submit" class="btn btn-primary" (click)="editar()">
+                            <i class="fas fa-database"></i>
+                            Actualizar
+                        </button>
+                    </div>
+                </form>
+            </ng-template>
+
+
+        </div>
+    </div>
+</div>
+
