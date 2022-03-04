@@ -1,0 +1,83 @@
+<div class="row m-3">
+    <h3>{{ title }}</h3>
+    <div class="card">
+        <div class="card-body">
+            <button class="btn btn-outline-dark btn-sm" (click)="regresar()" >
+                <i class="fas fa-arrow-left"></i>
+                Regresar al listado
+            </button>
+            <form class="my-3 form" >
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form__group">
+                            <label for="descripcion">Descripcion</label>
+                            <input type="text" name="descripcion" autocomplete="off" [(ngModel)]="siniestro.descripcion" required class="form__control" placeholder="Ingrese la descripcion">
+                        </div>
+                        <div class="form__group">
+                            <label for="direccion">Direccion</label>
+                            <input type="text" name="direccion" autocomplete="off" [(ngModel)]="siniestro.direccion" required class="form__control" placeholder="Ingrese la direccion">
+                        </div>
+                        <div class="form__group">
+                            <label for="latitud">latitud</label>
+                            <input type="text" name="latitud" autocomplete="off" [(ngModel)]="siniestro.latitud" required class="form__control" placeholder="Ingrese la latitud">
+                        </div>
+                        <div class="form__group">
+                            <label for="longitud">longitud</label>
+                            <input type="text" name="longitud" autocomplete="off" [(ngModel)]="siniestro.longitud" required class="form__control" placeholder="Ingrese la longitud">
+                        </div>
+                        <div class="form__group">
+                            <label for="telefono">Telefono</label>
+                            <input type="text" name="telefono" autocomplete="off" [(ngModel)]="siniestro.telefono" required class="form__control" placeholder="Ingrese el telefono">
+                        </div>
+                        <div class="form__group">
+                            <label for="numero">Numero</label>
+                            <input type="number" name="numero" autocomplete="off" [(ngModel)]="siniestro.numero" required class="form__control" placeholder="Ingrese el numero">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form__group">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" name="fecha" [(ngModel)]="siniestro.fecha" class="form__control">
+                        </div>
+                        <div class="form__group">
+                            <label for="estado_emergencia">Estado de Emergencia</label>
+                            <select name="estado_emergencia" [(ngModel)]="siniestro.estado_emergencia" class="form__control">
+                                <option value="">Seleccione el estado</option>
+                                <option value="Uno">Gravedad Uno</option>
+                                <option value="Dos">Gravedad Dos</option>
+                                <option value="Tres">Gravedad tres</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="tipo_siniestro_id">Tipo de Siniestro</label>
+                            <select name="tipo_siniestro_id" [(ngModel)]="siniestro.tipo_siniestro_id" class="form__control">
+                                <option value="">Seleccione el tipo</option>
+                                <option *ngFor="let t of tipoSiniestros?.data" [value]="t.id">{{ t.descripcion }}</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="solicitante_id">Solicitante</label>
+                            <select name="solicitante_id" [(ngModel)]="siniestro.solicitante_id" class="form__control">
+                                <option value="">Seleccione el/la solicitante</option>
+                                <option *ngFor="let s of solicitantes?.data" [value]="s.id">{{ s.nombre }} {{ s.apellido }}</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="vehiculo_id">Vehiculo</label>
+                            <select name="vehiculo_id" [(ngModel)]="siniestro.vehiculo_id" class="form__control">
+                                <option value="">Seleccione el vehiculo</option>
+                                <option *ngFor="let v of vehiculos?.data" [value]="v.id">{{ v.codigo }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn btn-primary" (click)="guardar()">
+                        <i class="fas fa-database"></i>
+                        Agregar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

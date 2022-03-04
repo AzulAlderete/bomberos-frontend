@@ -1,0 +1,45 @@
+<div class="row m-3">
+    <h3>{{ title }}</h3>
+    <div class="card">
+        <div class="card-body">
+            <button class="btn btn-outline-dark btn-sm" (click)="regresar()" >
+                <i class="fas fa-arrow-left"></i>
+                Regresar al listado
+            </button>
+            <form class="my-3 form" (ngSubmit)="actualizar()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form__group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" autocomplete="off" name="nombre" required="true" class="form__control" [(ngModel)]="solicitante.nombre"  placeholder="Ingresar el nombre" />
+                        </div>
+                        <div class="form__group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" autocomplete="off" name="apellido" required="true" class="form__control" [(ngModel)]="solicitante.apellido"  placeholder="Ingresar el apellido" />
+                        </div>
+                        <div class="form__group">
+                            <label for="documento">Documento</label>
+                            <input type="text" autocomplete="off" name="documento" required="true" class="form__control" [(ngModel)]="solicitante.documento"  placeholder="Ingresar el documento" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form__group">
+                        <label for="telefono">telefono</label>
+                        <input type="text" autocomplete="off" name="telefono" required="true" class="form__control" [(ngModel)]="solicitante.telefono"  placeholder="Ingresar el telefono" />
+                        </div>
+                        <div class="form__group">
+                            <label for="direccion">Direccion</label>
+                            <input type="text" autocomplete="off" name="direccion" required="true" class="form__control" [(ngModel)]="solicitante.direccion"  placeholder="Ingresar la direccion" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-database"></i>
+                        Actualizar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

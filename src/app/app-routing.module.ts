@@ -63,6 +63,31 @@ const routes: Routes = [
     canLoad: [AuthGuard],
   },
   {
+    path: 'siniestros',
+    loadChildren: () =>
+      import('./siniestros/siniestros.module').then((m) => m.SiniestrosModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'tipo-siniestros',
+    loadChildren: () =>
+      import('./tipo-siniestros/tipo-siniestros.module').then(
+        (m) => m.TipoSiniestrosModule
+      ),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'solicitantes',
+    loadChildren: () =>
+      import('./solicitantes/solicitantes.module').then(
+        (m) => m.SolicitantesModule
+      ),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
     path: '**',
     component: ErrorComponent,
   },

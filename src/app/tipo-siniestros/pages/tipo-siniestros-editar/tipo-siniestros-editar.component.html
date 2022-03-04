@@ -1,0 +1,35 @@
+<div class="row m-3">
+    <h3>{{ title }}</h3>
+    <div class="card">
+        <div class="card-body">
+            <button class="btn btn-outline-dark btn-sm" (click)="regresar()" >
+                <i class="fas fa-arrow-left"></i>
+                Regresar al listado
+            </button>
+            <div *ngIf="!tipoSiniestro.hasOwnProperty('id'); else mostrarForm" >
+                <div class="d-flex justify-content-center h-50">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+                </div>
+            </div>
+            <ng-template #mostrarForm>
+
+                <form class="my-3 form" (ngSubmit)="actualizar()">
+                    <div class="form__group">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" autocomplete="off" name="descripcion" required="true" class="form__control" [(ngModel)]="tipoSiniestro.descripcion"  placeholder="Ingresar la descripcion" />
+                    </div>
+                    <div class="form__group">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-database"></i>
+                            Actualizar
+                        </button>
+                    </div>
+                </form>
+            </ng-template>
+
+        </div>
+    </div>
+</div>
+
