@@ -88,6 +88,29 @@ const routes: Routes = [
     canLoad: [AuthGuard],
   },
   {
+    path: 'tipo-vehiculos',
+    loadChildren: () =>
+      import('./tipo-vehiculos/tipo-vehiculos.module').then(
+        (m) => m.TipoVehiculosModule
+      ),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'vehiculos',
+    loadChildren: () =>
+      import('./vehiculos/vehiculos.module').then((m) => m.VehiculosModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () =>
+      import('./usuarios/usuarios.module').then((m) => m.UsuariosModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
     path: '**',
     component: ErrorComponent,
   },

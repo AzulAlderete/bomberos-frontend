@@ -1,0 +1,47 @@
+<div class="row m-3">
+    <h3>{{ title }}</h3>
+    <div class="card">
+        <div class="card-body">
+            <button class="btn btn-outline-dark btn-sm" (click)="regresar()" >
+                <i class="fas fa-arrow-left"></i>
+                Regresar al listado
+            </button>
+            <form class="my-3 form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form__group">
+                            <label for="codigo">Codigo</label>
+                            <input type="number" required class="form__control" placeholder="Ingrese el codigo">
+                        </div>
+                        <div class="form__group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" required class="form__control" placeholder="Ingrese el nombre">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form__group">
+                            <label for="tipo_vehiculo_id">Tipo de Vehiculo</label>
+                            <select name="" id="" class="form__control">
+                                <option *ngFor="let t of tipoVehiculos?.data" [value]="t.id">{{ t.descripcion }}</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label for="estado">Estado</label>
+                            <select name="" id="" class="form__control">
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-database"></i>
+                        Agregar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

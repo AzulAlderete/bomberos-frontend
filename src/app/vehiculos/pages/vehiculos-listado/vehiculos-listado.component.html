@@ -1,0 +1,51 @@
+<div class="row m-3">
+    <h3>{{ title }}</h3>
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            <a routerLink="/vehiculos/agregar" class="btn btn-dark btn-sm mb-4">
+                <i class="fas fa-plus"></i>
+                Nuevo Vehiculo
+            </a>
+            <div *ngIf="!vehiculos; else mostrarTabla" >
+                <div class="d-flex justify-content-center h-50">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Cargando...</span>
+                    </div>
+                </div>
+            </div>
+            <ng-template #mostrarTabla>
+                <table class="table table-striped" datatable [dtOptions]="dtOptions">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Patente</th>
+                        <th>Denominacion</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let v of vehiculos?.data">
+                        <td>{{ v.codigo }}</td>
+                        <td>{{ v.patente }}</td>
+                        <td>{{ v.denominacion }}</td>
+                        <td>{{ v.tipo_vehiculo.descripcion }}</td>
+                        <td>{{ v.estado }}</td>
+                        <td>
+                            <a href="" class="btn btn-outline-info btn-sm" style="margin-right: .5rem;">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a href="" class="btn btn-outline-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+
