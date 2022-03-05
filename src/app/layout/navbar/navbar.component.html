@@ -1,0 +1,23 @@
+<header class="header">
+                <button class="header__menu" id="toggle-menu" (click)="toggleSidebar()">
+                    <img src="assets/img/menu.svg" alt="menu">
+                </button>
+                <div class="header__profile" >
+                    <div class="dropdown">
+                      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <div class="d-inline">
+                            <img src="assets/img/user-circle.svg" class="d-inline" alt="user">
+                            <span class="d-inline">Admin</span>
+                          </div>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                        <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                         -->
+                          <li><a class="dropdown-item" href="#">
+                           <button class="btn btn-danger m-auto">Cerrar Sesion</button>
+                        </a></li>
+
+                      </ul>
+                    </div>
+                </div>
+            </header>
