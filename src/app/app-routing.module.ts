@@ -14,28 +14,6 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'areas',
-    loadChildren: () => import('./area/area.module').then((m) => m.AreaModule),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
-  },
-  {
-    path: 'rangos',
-    loadChildren: () =>
-      import('./rangos/rangos.module').then((m) => m.RangosModule),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
-  },
-  {
-    path: 'voluntarios',
-    loadChildren: () =>
-      import('./voluntarios/voluntarios.module').then(
-        (m) => m.VoluntariosModule
-      ),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
-  },
-  {
     path: 'tipo-herramientas',
     loadChildren: () =>
       import('./tipo-herramientas/tipo-herramientas.module').then(
@@ -54,11 +32,54 @@ const routes: Routes = [
     canLoad: [AuthGuard],
   },
   {
+    path: 'tipo-vehiculos',
+    loadChildren: () =>
+      import('./tipo-vehiculos/tipo-vehiculos.module').then(
+        (m) => m.TipoVehiculosModule
+      ),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'vehiculos',
+    loadChildren: () =>
+      import('./vehiculos/vehiculos.module').then((m) => m.VehiculosModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'areas',
+    loadChildren: () => import('./area/area.module').then((m) => m.AreaModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'rangos',
+    loadChildren: () =>
+      import('./rangos/rangos.module').then((m) => m.RangosModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
     path: 'bocas-de-agua',
     loadChildren: () =>
       import('./bocas-de-agua/bocas-de-agua.module').then(
         (m) => m.BocasDeAguaModule
       ),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'roles',
+    loadChildren: () =>
+      import('./roles/roles.module').then((m) => m.RolesModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () =>
+      import('./usuarios/usuarios.module').then((m) => m.UsuariosModule),
     canActivate: [AuthGuard],
     canLoad: [AuthGuard],
   },
@@ -88,32 +109,11 @@ const routes: Routes = [
     canLoad: [AuthGuard],
   },
   {
-    path: 'tipo-vehiculos',
+    path: 'voluntarios',
     loadChildren: () =>
-      import('./tipo-vehiculos/tipo-vehiculos.module').then(
-        (m) => m.TipoVehiculosModule
+      import('./voluntarios/voluntarios.module').then(
+        (m) => m.VoluntariosModule
       ),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
-  },
-  {
-    path: 'vehiculos',
-    loadChildren: () =>
-      import('./vehiculos/vehiculos.module').then((m) => m.VehiculosModule),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
-  },
-  {
-    path: 'usuarios',
-    loadChildren: () =>
-      import('./usuarios/usuarios.module').then((m) => m.UsuariosModule),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
-  },
-  {
-    path: 'roles',
-    loadChildren: () =>
-      import('./roles/roles.module').then((m) => m.RolesModule),
     canActivate: [AuthGuard],
     canLoad: [AuthGuard],
   },
